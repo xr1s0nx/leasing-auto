@@ -1,4 +1,5 @@
-@import 'src/variables';
+@import "../../variables";
+@import "src/fonts";
 
 .button {
   width: 427px;
@@ -7,18 +8,44 @@
   font-weight: 900;
   font-size: 30px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 15px 0;
   text-align: center;
   border: none;
   cursor: pointer;
-  transition: .2s linear;
+  transition: 0.2s linear;
+  font-family: Nekst, serif;
 
+  @media screen and (max-width: 1439px) {
+    width: 320px;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    font-size: 22px;
+    line-height: 20px;
+    color: #ffffff;
+    padding: 15px 10px;
+  }
   &:hover {
     background: #111;
   }
 
   &:active {
     background: $greyFontColor;
+  }
+
+  &.disable {
+    background: $orangeColor !important;
+    opacity: 0.5;
+
+    img {
+      width: 35px;
+      height: 35px;
+      @media screen and (max-width: 767px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }

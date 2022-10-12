@@ -1,8 +1,22 @@
-@import 'src/variables';
+@import "../../variables";
+@import "src/fonts";
 
 .ResultBlock {
   width: 427px;
+  @media screen and (max-width: 1439px) {
+    & {
+      width: 320px;
+    }
+  }
+  @media screen and (max-width: 1119px) {
+    margin-bottom: 45px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
   .title {
+    font-family: Gilroy, serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -14,5 +28,13 @@
     font-size: 54px;
     line-height: 90%;
     color: #333333;
+    font-family: Nekst, serif;
+
+    @media screen and (max-width: 767px) {
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 20px;
+      color: #333e48;
+    }
   }
 }

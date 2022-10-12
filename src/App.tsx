@@ -38,6 +38,7 @@ function App() {
   const [sumResult, changeSumResult] = React.useState<IInputValue>({
     value: 0,
   });
+  const [loading, setLoading] = React.useState(false);
   const mainPercent = 0.035;
 
   React.useEffect(() => {
@@ -74,12 +75,16 @@ function App() {
   const send = () => {
     const headers = {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    }
-
-    axios.post('https://hookb.in/eK160jgYJ6UlaRPldJ1P', postObj, {
-      headers: headers,
-    }).then(response => console.log(response))
+      "Access-Control-Allow-Origin": "*",
+    };
+    setLoading(true);
+    axios
+      .post("https://6346e9e9db76843976a1faae.mockapi.io/info", postObj, {
+        headers: headers,
+      })
+      .then((response) => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -95,6 +100,7 @@ function App() {
             title={"Стоимость автомобиля"}
             abr={"₽"}
             percent={false}
+            loading={loading}
           />
           <RangeInput
             maxValue={60}
@@ -105,6 +111,7 @@ function App() {
             abr={""}
             percent={true}
             contr={contr.value}
+            loading={loading}
           />
           <RangeInput
             maxValue={60}
@@ -114,12 +121,13 @@ function App() {
             title={"Срок лизинга"}
             abr={"мес."}
             percent={false}
+            loading={loading}
           />
         </div>
         <div className="results">
           <Result title={"Сумма договора лизинга"} value={sumResult.value} />
           <Result title={"Ежемесячный платеж от"} value={monthlyResult.value} />
-          <PostButton send={send} />
+          <PostButton send={send} loading={loading}/>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ const RangeInput = ({
   abr,
   percent,
   contr,
+  loading,
 }: {
   maxValue: number;
   minValue: number;
@@ -19,6 +20,7 @@ const RangeInput = ({
   abr: string;
   percent: boolean;
   contr?: number;
+  loading: boolean;
 }) => {
   const inputRef: any = React.useRef();
 
@@ -52,11 +54,12 @@ const RangeInput = ({
   const sep = " ";
 
   return (
-    <div className={styles.RangeInput}>
+    <div className={loading ? `${styles.RangeInput} ${styles.disable}` : styles.RangeInput}>
       <p className={styles.title}>{title}</p>
       <div className={`${styles.wrap} ${!edit ? "" : styles.edit}`}>
         <div className={styles.inputs}>
           <input
+            disabled={loading}
             className={styles.textInput}
             ref={inputRef}
             max={maxValue}
@@ -95,6 +98,7 @@ const RangeInput = ({
           />
           {percent ? (
             <input
+                disabled={loading}
               max={maxValue}
               min={minValue}
               onChange={(e) => {
@@ -127,6 +131,7 @@ const RangeInput = ({
           max={maxValue}
           min={minValue}
           value={value}
+          disabled={loading}
           onChange={(e) => changeValue({ value: e.target.value })}
           type="range"
         />
