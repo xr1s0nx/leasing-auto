@@ -74,7 +74,7 @@ function App() {
   const send = () => {
     const headers = {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "https://leasing-auto.vercel.app"
+      "Access-Control-Allow-Origin": "*"
     }
 
     axios.post('https://hookb.in/eK160jgYJ6UlaRPldJ1P', postObj, {
