@@ -72,17 +72,13 @@ function App() {
   }, [contr, liz, monthlyResult]);
 
   const send = () => {
-    fetch("https://hookb.in/eK160jgYJ6UlaRPldJ1P", {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify(postObj),
+    const headers = {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
+    }
+
+    axios.post('https://hookb.in/eK160jgYJ6UlaRPldJ1P', postObj, {
+      headers: headers,
     }).then(response => console.log(response))
   };
 
