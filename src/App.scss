@@ -1,0 +1,51 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.app {
+  padding-top: 215px;
+  .container {
+    width: 1345px;
+    margin: 0 auto;
+    .title {
+      font-weight: 900;
+      font-size: 54px;
+      line-height: 90%;
+      color: $titleColor;
+      max-width: 750px;
+      margin-bottom: 30px;
+    }
+    .results {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,18 @@
+@import 'src/variables';
+
+.ResultBlock {
+  width: 427px;
+  .title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $greyFontColor;
+    margin-bottom: 8px;
+  }
+  .value {
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 90%;
+    color: #333333;
+  }
+}

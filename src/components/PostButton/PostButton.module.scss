@@ -1,0 +1,24 @@
+@import 'src/variables';
+
+.button {
+  width: 427px;
+  background: $orangeColor;
+  border-radius: 40px;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 36px;
+  color: #FFFFFF;
+  padding: 15px 0;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: .2s linear;
+
+  &:hover {
+    background: #111;
+  }
+
+  &:active {
+    background: $greyFontColor;
+  }
+}
