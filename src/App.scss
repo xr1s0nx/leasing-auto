@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'fonts';
+@import "variables";
+@import "fonts";
 
 * {
   box-sizing: border-box;
@@ -14,15 +14,20 @@ body {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 1439px){
+@media screen and (max-width: 1439px) {
   .app .container {
     width: 1024px !important;
     padding: 0 10px;
   }
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .app {
-  padding-top: 215px;
   @media screen and (max-width: 1119px) {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -34,7 +39,7 @@ body {
   .container {
     width: 1345px;
     margin: 0 auto;
-    @media screen and (max-width: 1119px){
+    @media screen and (max-width: 1119px) {
       width: 696px !important;
     }
     @media screen and (max-width: 767px) {
@@ -84,10 +89,8 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    @media screen and (max-width: 1119px){
+    @media screen and (max-width: 1119px) {
       display: block;
     }
   }
 }
-
-
